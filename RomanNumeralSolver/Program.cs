@@ -55,7 +55,6 @@ namespace RomanNumeralSolver
             }
 
             Console.WriteLine(roman);
-            Console.ReadLine();
         }
     }
 }
