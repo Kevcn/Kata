@@ -28,7 +28,7 @@ namespace TtitleCase
 
         private static string Convert(string title, string minorWords = "")
         {
-            if (title == "" || title is null)
+            if (String.IsNullOrEmpty(title))
                 return title;
 
             var minor = minorWords is null ? new string[0] : minorWords.ToLower().Split(' ');
