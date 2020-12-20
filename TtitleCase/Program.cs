@@ -8,13 +8,23 @@ namespace TtitleCase
     {
         static void Main(string[] args)
         {
-            var t = Convert("a clash of KINGS", "a an the of");
+            var example1 = Convert("a clash of KINGS", "a an the of");
+            var example2 = Convert("THE WIND IN THE WILLOWS", "The In");
+            var example3 = Convert("the quick brown fox");
             
-            var t2 = Convert("");
-
-            Console.WriteLine(t2);
+            Console.WriteLine($"{example1}{Environment.NewLine}{example2}{Environment.NewLine}{example3}");
+            Console.WriteLine($"{Environment.Version}");
+            Console.WriteLine($"{Environment.ProcessorCount}");
+            Console.WriteLine($"{Environment.TickCount}");
+            Console.WriteLine($"{Environment.UserName}");
+            Console.WriteLine($"{Environment.UserDomainName}");
+            Console.WriteLine($"{Environment.MachineName}");
+            Console.WriteLine($"{Environment.CommandLine}");
+            Console.WriteLine($"{Environment.OSVersion}");
+            Console.WriteLine($"{Environment.ExitCode}");
+            Console.WriteLine($"{Environment.CurrentManagedThreadId}");
+            Console.WriteLine($"{Environment.WorkingSet}");
         }
-
 
         private static string Convert(string title, string minorWords = "")
         {
