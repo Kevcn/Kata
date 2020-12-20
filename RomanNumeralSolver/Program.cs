@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace RomanNumeralSolver
@@ -15,7 +14,7 @@ namespace RomanNumeralSolver
         // 500 - D
         // 1000 - M
         
-        private static readonly Dictionary<int, string> _dictionary = new Dictionary<int, string>()
+        private static readonly Dictionary<int, string> _dictionary = new Dictionary<int, string>
         {
             { 1000, "M" },
             { 900, "CM" },
@@ -29,7 +28,7 @@ namespace RomanNumeralSolver
             { 9, "IX" },
             { 5, "V" },
             { 4, "IV" },
-            { 1, "I" },
+            { 1, "I" }
         };
         
         /// <summary>
