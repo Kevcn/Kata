@@ -21,7 +21,7 @@ namespace IPValidation
 
             foreach (var d in ipAddress.Split('.'))
             {
-                if (!UInt32.TryParse(d, out var number) || number > 255 || d[0] == '0' && d.Length > 1)
+                if (!UInt32.TryParse(d, out var number) || number > 255 || d[0] == '0' && d.Length > 1) // checks for 01
                     return false;
             }
             
