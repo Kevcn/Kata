@@ -6,9 +6,12 @@ namespace TriesTree
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var tree = new Tree();
+            tree.insert("test");
+            Console.WriteLine(tree.search("test"));
+            Console.WriteLine(tree.search("tes"));
+            Console.WriteLine(tree.startsWith("te"));
+            Console.WriteLine(tree.startsWith("ts"));
         }
-        
-        
     }
 }

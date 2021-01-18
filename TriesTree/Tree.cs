@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using System.Linq;
 
@@ -6,14 +7,13 @@ namespace TriesTree
 {
     public class Tree
     {
-        // 
-        
-        private node root;
+        private readonly node root;
 
         public Tree()
         {
             root = new node
             {
+                character = '/',
                 isWord = false
             };
         }
@@ -28,31 +28,48 @@ namespace TriesTree
             
                 // set the final node isWord to true
 
-
+            var currentNode = root;
             var chars = word.ToCharArray();
 
-            var length = chars.Length;
             foreach (var c in chars)
             {
-                length--;
-                if (root.childNodes.All(x => x.character != c))
+                if (currentNode.childNodes.All(x => x.character != c))
                 {
-                    root.childNodes.Add(new node{ character = c, isWord = length == 0}); // set final node isWord to true
+                    currentNode.childNodes.Add(new node{ character = c });
                 }
+
+                currentNode = currentNode.childNodes.First(x => x.character == c);
             }
-            
-            
-            
+
+            // final node
+            currentNode.isWord = true;
         }
 
         public bool search(string word)
         {
-            
+            var node = getNode(word);
+
+            return node != null && node.isWord;
         }
         
         public bool startsWith(string prefix)
         {
-            
+            return getNode(prefix) != null;
+        }
+
+        private node getNode(string word)
+        {
+            var currentNode = root;
+            for (int i = 0; i < word.Length; i++)
+            {
+                var c = word[i];
+                if (currentNode.childNodes.All(x => x.character != c))
+                    return null;
+
+                currentNode = currentNode.childNodes.First(x => x.character == c);
+            }
+
+            return currentNode;
         }
         
     }
@@ -60,10 +77,15 @@ namespace TriesTree
 
     class node
     {
+        public node()
+        {
+            childNodes = new List<node>();
+            isWord = false;
+        }
         public char character { get; set; }
 
         public bool isWord { get; set; }
 
-        public List<node> childNodes { get; set; }
+        public List<node> childNodes { get; }
     }
 }
