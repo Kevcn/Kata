@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace RouteBetweenNodes
 {
@@ -13,15 +11,13 @@ namespace RouteBetweenNodes
         
         static void Main(string[] args)
         {
-            // 
-            
             Insert('S', new List<node>{ new node{ character = 'E' }, new node{ character = 'D'}});
             Insert('D', new List<node>{ new node{ character = 'S' }, new node{ character = 'G'}});
             Insert('E', new List<node>{ new node{ character = 'C' }, new node{ character = 'S'}});
             Insert('G', new List<node>{ new node{ character = 'C' }, new node{ character = 'D'}});
             Insert('C', new List<node>{ new node{ character = 'E' }, new node{ character = 'G'}});
             
-            var result = Find('S', 'H');
+            var result = Find('S', 'E');
             Console.WriteLine(result);
         }
 
