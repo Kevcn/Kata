@@ -10,7 +10,7 @@ namespace BreadthFirstSearch
         
         static void Main(string[] args)
         {
-            var graph = new Graph(8);
+            var graph = new Graph(9);
             
             graph.AddConnection(0, 1); 
             graph.AddConnection(0, 2); 
@@ -28,8 +28,9 @@ namespace BreadthFirstSearch
             graph.AddConnection(6, 3);
             graph.AddConnection(7, 3);
             graph.AddConnection(7, 4);
-            
-            graph.StartFrom(4);
+            graph.AddConnection(7, 8);
+
+            graph.StartFrom(2);
         }
     }
 }

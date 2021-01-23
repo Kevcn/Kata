@@ -14,117 +14,60 @@ namespace DepthFirstSearch
         // print the value
             
         // add node to stack
-        
-        private readonly List<node> graph;
+        private readonly int Vertice_size; 
 
-        public Graph()
+        //Adjacency Lists 
+        readonly LinkedList<int>[] nodes; 
+
+        public Graph(int V)
         {
-            graph = new List<node>();
-            Init();
+            nodes = new LinkedList<int>[V];
+            for(int i = 0; i < nodes.Length; i++)
+            {
+                nodes[i] = new LinkedList<int>();
+            }
+            Vertice_size = V;
         }
-        public void DFS(int number)
+
+        public void AddConnection(int v, int w)
+        {		 
+            nodes[v].AddLast(w);
+        }
+        
+        public void StartFrom(int number)
         {
-            var startingNode = graph.Find(x => x.Number == number);
-            if (startingNode is null)
-                return;
+            Console.Write($"Following is Depth First " +
+                          "Traversal(starting from " +
+                          $"vertex {number})\n");
+            DFS(number);
+        }
 
-            var stack = new Stack<node>();
-            stack.Push(startingNode);
+        private void DFS(int number)
+        {
+            bool[] visited = new bool[Vertice_size];
+            // Mark all nodes as not visited initially
+            for(int i = 0; i < Vertice_size; i++)
+                visited[i] = false;
 
+            var stack = new Stack<int>();
+            stack.Push(number);
+
+            visited[number] = true;
+            
             while (stack.Any())
             {
                 var currentNode = stack.Pop();
                 
-                currentNode.Visited = true;
-                Console.Write(currentNode.Number + " ");
+                Console.Write(currentNode + " ");
 
-                foreach (var node in currentNode.LinkedNodes.Where(x => x.Visited == false))
+                LinkedList<int> adjacents_nodes = nodes[currentNode];
+
+                foreach (var node in adjacents_nodes.Where(node => !visited[node]))
                 {
+                    visited[node] = true;
                     stack.Push(node);
                 }
             }
         }
-
-        private void Init()
-        {
-            var node1 = new node{
-                Number = 1,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 2},
-                    new node{Number = 3}
-                }
-            };
-            
-            var node2 = new node{
-                Number = 2,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 1},
-                    new node{Number = 4},
-                    new node{Number = 5}
-                }
-            };
-            
-            var node3 = new node{
-                Number = 3,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 1},
-                    new node{Number = 5}
-                }
-            };
-            
-            var node4 = new node{
-                Number = 4,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 2},
-                    new node{Number = 5},
-                    new node{Number = 6}
-                }
-            };
-            
-            var node5 = new node{
-                Number = 5,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 2},
-                    new node{Number = 4},
-                    new node{Number = 6}
-                }
-            };
-            
-            var node6 = new node{
-                Number = 6,
-                LinkedNodes = new List<node>
-                {
-                    new node{Number = 4},
-                    new node{Number = 5}
-                }
-            };
-            
-            graph.Add(node1);
-            graph.Add(node2);
-            graph.Add(node3);
-            graph.Add(node4);
-            graph.Add(node5);
-            graph.Add(node6);
-        }
-    }
-
-
-    public class node
-    {
-        public node()
-        {
-            LinkedNodes = new List<node>();
-        }
-        
-        public int Number { get; set; }
-
-        public bool Visited { get; set; }
-
-        public List<node> LinkedNodes { get; set; }
     }
 }
