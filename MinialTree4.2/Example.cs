@@ -12,7 +12,7 @@ namespace MinialTree4._2
             // var startnumber = arr[start];
             // var endnumber = arr[end];
             
-            /* Base Case */
+            /* Check Boundaries */
             if (start > end) 
             {
                 return null; 
