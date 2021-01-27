@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Threading;
 
 namespace BinaryTreeTraversal
 {
@@ -6,7 +10,6 @@ namespace BinaryTreeTraversal
     {
         static void Main(string[] args)
         {
-            
             var tree = new Traverse(10);
 
             var root = tree.GetTree();

@@ -16,39 +16,45 @@ namespace BinarySearch
             // If stateemnts -> remove half the array
             int target = 33;
             
-            var sortedNumbers = new List<int>
-            {
-                1,2,3,4,5,6,7,8,9,10,11,12
-            };
+            var sortedNumbers = new List<int>{1,2,3,4,5,6,7,8,9,10,11,12,33};
+            var collection = new List<int>{1,2,3,4,5,6,9,10,11};
+
+            Console.WriteLine(BinarySearch(target, sortedNumbers));
+        }
+        
+        private static bool BinarySearch(int target, List<int> collection)
+        {
+            var startIndex = 0;
+            var endindex = collection.Count - 1;
             
-            var stop = false;
-
-            while (!stop)
+            if (collection.Count == 0)
             {
-                if (sortedNumbers.Count < 2)
-                {
-                    stop = true;
-                }
-                
-                var currentPointer = sortedNumbers[sortedNumbers.Count / 2];
+                return false;
+            }
+            
+            while (startIndex <= endindex)
+            {
+                var midIndex = startIndex + (endindex - startIndex) / 2;
+            
+                var mid = collection[midIndex];
 
-                if (currentPointer == target)
+                if (mid == target)
                 {
-                    Console.WriteLine($"Found target {target}");
-                    return;
+                    return true;
                 }
-                
-                if (currentPointer > target)
+
+                if (target > mid)
                 {
-                    sortedNumbers.RemoveRange(sortedNumbers.Count / 2, sortedNumbers.Count / 2);
+                    startIndex = midIndex + 1;
                 }
-                else
+
+                if (target < mid)
                 {
-                    sortedNumbers.RemoveRange(0, sortedNumbers.Count / 2);
+                    endindex = midIndex - 1;
                 }
             }
             
-            Console.WriteLine("Target not found");
+            return false;
         }
     }
 }
