@@ -12,6 +12,7 @@ namespace ListOfDepths4._3
             Tree = new Node(root);
         }
         
+        // confusing 
         public void PreOrderApproach(Node node, List<List<Node>> lists, int level)
         {
             if (node == null)
