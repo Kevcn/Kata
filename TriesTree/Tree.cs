@@ -38,6 +38,7 @@ namespace TriesTree
                     currentNode.childNodes.Add(new node{ character = c });
                 }
 
+                // Update the current node to the node we have just created
                 currentNode = currentNode.childNodes.First(x => x.character == c);
             }
 

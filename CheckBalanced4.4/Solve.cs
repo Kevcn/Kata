@@ -11,6 +11,7 @@ namespace CheckBalanced4._4
         
         // if its greater than 1 - it is not balanced
 
+        // pre-order traversal 
         public void Work(Node node)
         {
             if (node is null)
@@ -21,7 +22,7 @@ namespace CheckBalanced4._4
             var leftTreeDepth = ScanLevels(node.LeftNode);
             var rightTreeDepth = ScanLevels(node.RightNode);
             
-            var nodeIsBalanced = Math.Abs(leftTreeDepth - rightTreeDepth) > 1;
+            var nodeIsBalanced = Math.Abs(leftTreeDepth - rightTreeDepth) <= 1;
             
             Console.WriteLine($"{node.Value} is balanced: {nodeIsBalanced}");
             // Could add something here to say as soon as 1 tree is not balanced, exit

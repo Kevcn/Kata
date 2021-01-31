@@ -15,9 +15,6 @@ namespace CheckBalanced4._4
                         LeftNode = new Solve.Node(1)
                         {
                             LeftNode = new Solve.Node(-2)
-                            {
-                                RightNode = new Solve.Node(0)
-                            }
                         }
                     },
                     RightNode = new Solve.Node(4)
