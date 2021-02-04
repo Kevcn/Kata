@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Async
 {
-    public class Worker : IAsyncStateMachine
+    public class Worker
     {
         public void Work1()
         {
@@ -37,16 +36,6 @@ namespace Async
             var content = await client.GetStringAsync("whatever");
 
             return content;
-        }
-
-        public void MoveNext()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetStateMachine(IAsyncStateMachine stateMachine)
-        {
-            throw new NotImplementedException();
         }
     }
 }
