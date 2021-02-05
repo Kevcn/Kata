@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ExceptionHandling
 {
@@ -19,6 +20,8 @@ namespace ExceptionHandling
                 // Gets the full stacktrace with line number! very important
                 Console.WriteLine("-----------------");
                 Console.WriteLine(cex);
+                Console.WriteLine("-----------------");
+                Console.WriteLine(cex.Demystify());
             }
             catch (Exception ex)
             {
