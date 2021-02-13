@@ -18,7 +18,7 @@ namespace GrpcService.Server.Services
             IServerStreamWriter<ServerToClientMessage> responseStream, 
             ServerCallContext context)
         {
-            var clientToServer = HandleClientToServerPing(requestStream);
+            var clientToServer = HandleClientToServerPing(requestStream, context);
 
             var serverToClient = HandleServerToClient(responseStream, context);
 
@@ -35,16 +35,17 @@ namespace GrpcService.Server.Services
                     Text = $"Service Said hi {pingCount} times",
                     Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
                 });
+                pingCount++;
+                await Task.Delay(1000);
             }
         }
 
-        private async Task HandleClientToServerPing(IAsyncStreamReader<ClientToServerMessage> requestStream)
+        private async Task HandleClientToServerPing(IAsyncStreamReader<ClientToServerMessage> requestStream, ServerCallContext context)
         {
-            while (await requestStream.MoveNext())
+            while (await requestStream.MoveNext() && !context.CancellationToken.IsCancellationRequested)
             {
                 var message = requestStream.Current;
                 _logger.LogInformation($"The client said {message.Text}");
-                await Task.Delay(1000);
             }
         }
     }
