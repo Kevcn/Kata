@@ -24,9 +24,27 @@ namespace DepthFirstSearch
             graph.AddConnection(6, 3);
             graph.AddConnection(7, 3);
             graph.AddConnection(7, 4);
-            graph.AddConnection(7, 8);
+            // graph.AddConnection(7, 8);
 
-            graph.StartFrom(2);
+            graph.StartFrom(4);
+
+            // Use queue for storage.
+
+            // Keep a list of visited nodes
+
+            // Mark the node as visited
+            // Enqueue the starting node
+
+            // loop - while queue is not empty
+
+                // dequeue from queue
+
+                // Print
+
+                // get all adjecent nodes that has not yet been visited
+
+                // Add to queue while mark them as visited
+
         }
     }
 }

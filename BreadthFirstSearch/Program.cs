@@ -28,9 +28,9 @@ namespace BreadthFirstSearch
             graph.AddConnection(6, 3);
             graph.AddConnection(7, 3);
             graph.AddConnection(7, 4);
-            graph.AddConnection(7, 8);
+            // graph.AddConnection(7, 8);
 
-            graph.StartFrom(2);
+            graph.StartFrom(4);
         }
     }
 }

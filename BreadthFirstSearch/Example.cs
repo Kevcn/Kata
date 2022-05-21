@@ -52,6 +52,7 @@ namespace BreadthFirstSearch
 	
             // Create a queue for BFS
             Queue<int> queue = new Queue<int>();
+
             // Mark the current node as 
             // visited and enqueue it 
             visited[s] = true;
