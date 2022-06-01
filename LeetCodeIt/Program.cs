@@ -2,32 +2,19 @@
 
 using LeetCodeIt;
 
-
 // QuickSort.Sort();
-
 // MergeSort.Run();
-
 // MergeTwoSortedLists.Run();
-
 // Palindrome.Run();
-
 // MaxProfit2.Run();
-
 // RomanInteger.Run();
+// ContainsDuplicate1.Run();
+// MaxSubarray.Run();
+// MaxProductSubarray.Run();
+// MinimumInRotatedSortedArray.Run();
+// SearchInRoratedSortedArray.Run();
+// SetMatrixZeroes.Run();
 
-ContainsDuplicate1.Run();
-
-
-
-
-
-
-
-
-
-
-
-
-
+ClimbingStairs.Run();
 
 Console.ReadLine();
