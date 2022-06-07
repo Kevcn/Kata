@@ -14,7 +14,15 @@ using LeetCodeIt;
 // MinimumInRotatedSortedArray.Run();
 // SearchInRoratedSortedArray.Run();
 // SetMatrixZeroes.Run();
+// ClimbingStairs.Run();
+// TwoSumII.Run();
+// ThreeSum2.Run();
+// ContainerWithMostWater.Run();
+// CoinChange2.Run();
+LongestIncreasingSubsequence.Run();
 
-ClimbingStairs.Run();
+
+
+
 
 Console.ReadLine();

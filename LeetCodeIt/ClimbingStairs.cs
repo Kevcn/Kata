@@ -2,7 +2,7 @@ namespace LeetCodeIt;
 
 public class ClimbingStairs
 {
-    // Bottom up approach
+    // *** Bottom up approach ***
     // Figure out from the target and backwards
     // Fibonacci sequence
     public static int ClimbStairs(int n)
