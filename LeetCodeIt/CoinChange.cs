@@ -18,7 +18,7 @@ public class CoinChange2
                 // skip coins that are bigger than the current target amount
                 if (i - coins[j] >= 0)
                 {
-                    // lets say current coin is 4
+                    // lets say current coin(j) is 4
                     // i (target is 7)
                     // we are saying we can reach i with current coin (1 + ) and dp[3] (dp[i - j])
 
@@ -32,6 +32,7 @@ public class CoinChange2
         return dp[amount] == amount + 1 ? -1 : dp[amount];
 
         // *** Number of combinations to reach an amount using coins
+        // https://www.youtube.com/watch?v=jaNZ83Q3QGc&t=520s&ab_channel=StephenO%27Neill
         // int[] combinations = new int[amount + 1];
         // combinations[0] = 1;
         //

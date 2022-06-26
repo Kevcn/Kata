@@ -19,10 +19,15 @@ using LeetCodeIt;
 // ThreeSum2.Run();
 // ContainerWithMostWater.Run();
 // CoinChange2.Run();
-LongestIncreasingSubsequence.Run();
+// LongestIncreasingSubsequence.Run();
+// LongestCommonSubsequence2.Run();
 
 
 
+// WordBreak2.Run();
 
+// CombinationSumIV.Run();
+
+HouseRobber.Run();
 
 Console.ReadLine();
