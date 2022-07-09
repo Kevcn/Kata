@@ -1,6 +1,6 @@
 namespace LeetCodeIt;
 
-public class CoinChange2
+public class CoinChange0
 {
     public static int CoinChange(int[] coins, int amount)
     {

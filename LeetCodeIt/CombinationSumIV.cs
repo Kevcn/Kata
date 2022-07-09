@@ -30,7 +30,6 @@ public class CombinationSumIV
         var input2 = new int[] { 1, 2, 3 };
         var input3 = new int[] {186, 419, 83, 408};
 
-        var output = CombinationSum4(input2, 4);
+        var output = CombinationSum4(input2, 3);
     }
-
 }

@@ -18,16 +18,20 @@ using LeetCodeIt;
 // TwoSumII.Run();
 // ThreeSum2.Run();
 // ContainerWithMostWater.Run();
-// CoinChange2.Run();
+// CoinChange0.Run();
 // LongestIncreasingSubsequence.Run();
 // LongestCommonSubsequence2.Run();
+// CombinationSumIV.Run();
 
-
+// HouseRobber.Run();
+// HouseRobber2.Run();
 
 // WordBreak2.Run();
 
-// CombinationSumIV.Run();
+// CoinChange2.Run();
 
-HouseRobber.Run();
+// UniquePaths5.Run();
+
+JumpGame.Run();
 
 Console.ReadLine();
